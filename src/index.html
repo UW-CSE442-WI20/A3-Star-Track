@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>Star Track</title>
     <link rel="stylesheet" type="text/css" href="./index.css">
-  </head>
-  <body>
-    <h1>Star Track</h1>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
     <script src="./index.js"></script>
     <script src="./require.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-
-    <img id="map" src="./image/map-1.jpg">
+  </head>
+  <body>
+    <h1>Star Track</h1>
+    <div id="mapid" style="height: 600px; width: 80%; margin: auto;"></div>
+    <script src="./map.js"></script>
   </body>
 </html>
