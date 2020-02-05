@@ -2,3 +2,26 @@ h1 {
     width: 100%;
     text-align: center;
 }
+
+#selection {
+    text-align: center;
+}
+
+#s1 {
+    display: inline-block;
+    margin-right: 100px;
+}
+
+select {
+    background-color: rgb(108, 104, 141);
+    color: #ffffff;
+}
+
+#s2 {
+    display: inline-block;
+    margin-right: 100px;
+}
+
+#s3 {
+    display: inline-block;
+}

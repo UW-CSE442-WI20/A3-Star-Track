@@ -16,7 +16,38 @@
   </head>
   <body>
     <h1>Star Track</h1>
+    
+    <div id="selection">
+      <div id="s1">
+        <div>Start Year</div>
+        <div id="startYear">
+          <select>
+            <option value="1900" selected>1900</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="s2">
+        <div>End Year</div>
+        <div id="endYear">
+          <select>
+            <option value="2018" selected>2018</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="s3">
+        <div>Meteorite Class</div>
+        <div id="class">
+          <select>
+            <option value="all" selected>All</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <div id="mapid" style="height: 600px; width: 80%; margin: auto;"></div>
     <script src="./map.js"></script>
+
   </body>
 </html>
