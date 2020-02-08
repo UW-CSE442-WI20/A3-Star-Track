@@ -12,21 +12,6 @@ var year = 2000;
 var slider = document.getElementById("yearRange");
 var output = document.getElementById("yearDisplay");
 output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
-    year = this.value;
-    // TODO: Update the plot here:
-}
-
-function filter_data(d, year, cls) {
-    var d_filtered =  d.filter(function(row) {
-            return row["year"] == year;
-        });
-    return d_filtered;
-}
-
 var all_data = d3.csv(csvFile, function(data) {
     return {
         name: data.name,
@@ -37,6 +22,29 @@ var all_data = d3.csv(csvFile, function(data) {
         GeoLocation: data.GeoLocation
     };
 });
-console.log(all_data);
+
+// returns a Promise of filtered csv array from all_data
+function filter_data() {
+    return all_data.
+    then(function(d) {
+            var d_filtered =  d.filter(function(row) {
+                return row["year"] == year;
+            });
+        return d_filtered;
+    });
+}
+
+console.log(filter_data());
+
+// Update the current slider value and render a new plot
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    year = this.value;
+    // TODO: Update the plot here:
+    console.log(filter_data());
+}
+
+
+
 // TODO Resolve this promise!
 // {"year": 2020, "mass": 200, "id":3}
