@@ -2,16 +2,12 @@ const d3 = require('d3');
 
 const csvFile = require('./Meteorite_Landings.csv');
 
-/*var name = [];
-var id = [];
-var recclass = [];
-var mass = [];
-var year = [];
-var GeoLocation = [];*/
 var year = 2000;
 var slider = document.getElementById("yearRange");
 var output = document.getElementById("yearDisplay");
 output.innerHTML = slider.value; // Display the default slider value
+
+// Load the csv file
 var all_data = d3.csv(csvFile, function(data) {
     return {
         name: data.name,
@@ -34,14 +30,25 @@ function filter_data() {
     });
 }
 
-console.log(filter_data());
+// TODO: change it to plotting function...
+function printToConsole() {
+    filter_data().then(function(d) {
+        d.map(function(row) {
+            console.log("name: " + row["name"] + ", GeoLocation:" + row["GeoLocation"]);
+        });
+    })
+    
+}
+
+// Print initial data
+printToConsole();
 
 // Update the current slider value and render a new plot
 slider.oninput = function() {
     output.innerHTML = this.value;
     year = this.value;
     // TODO: Update the plot here:
-    console.log(filter_data());
+    printToConsole();
 }
 
 
