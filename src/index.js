@@ -85,11 +85,11 @@ function drawPoints() {
                 radius: Math.min((row["mass"] + 1000.0) * 100.0, 150000)
             });
             shipLayer.addLayer(circle);
-            circle.bindPopup("Name: " + row["name"] + "<br>"
-                            + "ID: " + row["id"] + "<br>"
-                            + "Class: " + row["recclass"] + "<br>"
-                            + "Mass (g): " + row["mass"] + "<br>"
-                            + "Geolocation: (" + row["reclat"] + ", " + row["reclong"] + ")");
+            circle.bindPopup("<b>Name:</b> " + row["name"] + "<br>"
+                            + "<b>ID: </b>" + row["id"] + "<br>"
+                            + "<b>Class: </b>" + row["recclass"] + "<br>"
+                            + "<b>Mass (g): </b>" + row["mass"] + "<br>"
+                            + "<b>Geolocation: </b>(" + row["reclat"] + ", " + row["reclong"] + ")");
         });
     })
     
